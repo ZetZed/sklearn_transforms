@@ -1,10 +1,8 @@
-import pandas as pd
 from sklearn.base import BaseEstimator, TransformerMixin
-from sklearn.metrics import accuracy_score
-from sklearn.ensemble import ExtraTreesClassifier 
-from sklearn.feature_selection import RFECV
-from sklearn.ensemble import RandomForestClassifier
-rfe = RFECV(estimator=RandomForestClassifier())
+from sklearn.impute import SimpleImputer
+from xgboost import XGBClassifier
+import pandas as pd
+import numpy as np
 
 # All sklearn Transforms must have the `transform` and `fit` methods
 class DropColumns(BaseEstimator, TransformerMixin):
